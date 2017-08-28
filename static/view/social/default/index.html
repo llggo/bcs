@@ -1,0 +1,17 @@
+{{define "body"}}
+
+<div class="row">
+        {{ range $key, $value := .data}}
+        <div class="col-md-12">
+            <a href="{{$value.URL}}" class="fa fa-{{ $key }}"></a>
+        </div>
+        {{ end }}
+</div>
+
+{{end}} {{define "scripts"}}
+
+<script>
+    //place js code
+</script>
+
+{{end}}

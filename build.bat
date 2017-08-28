@@ -1,0 +1,1 @@
+gox -osarch="windows/386"

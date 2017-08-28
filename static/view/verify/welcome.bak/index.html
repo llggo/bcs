@@ -1,0 +1,57 @@
+{{define "css"}}
+	<link href="/static/css/styles.css" rel="stylesheet" />
+{{end}}
+
+{{define "body"}}
+
+<body>
+    <div class="full-image">
+        <img src="{{.product_image}}" />
+    </div>
+    <div class="container text-center">
+        <h1 class="title-big">{{.hello}}</h1>
+        <p class="text-medium">Chúng tôi tạo ra những điều hữu ích nhất giúp bạn có  thể kiểm tra sản phẩm mua hàng để đảm bảo an toàn nhất. Bạn có thể chọn "Tra xuất thông tin sản phẩm" để tìm hiểu kỹ về thông tin sản phẩm hoặc xác thực sản phẩm chính hãng bằng cách chọn "Kiểm tra sản phẩm chính hãng" trên tay bạn</p>
+    </div>
+    <ul class="btn-contact">
+        {{if .show_verify}}
+        <li>
+            <a href="/api/handle/type?qrcode_id={{.qrcode_id}}">
+                <i><img src="/static/img/ico_1.png" /></i>
+                Xác thực hàng hóa
+            </a>
+        </li>
+        {{end}}
+        <li>
+            <a href="/api/handle/product_info?qrcode_id={{.qrcode_id}}&bulk_id={{.bulk_id}}">
+                <i><img src="/static/img/ico_2.png" /></i>
+                Thông tin sản phẩm
+            </a>
+        </li>
+    </ul>
+    <h2 class="title-break">sản phẩm liên quan</h2>
+    <div class="container">
+        <div class="related-product">
+            <div class="item">
+                <div class="product-image">
+                    <img src="/static/img/product_1.png" />
+                </div>
+                <div class="product-info">
+                    <h3>{{.product_name}}</h3>
+                    <p href="javascript:void(0)" class="underline-link">Thông tin sản phẩm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix group-flat-btn">
+        <a class="btn-flat col-xs-6" href="#">
+            <i><img src="/static/img/ico_3.png" /></i>
+            Gửi phản hồi
+        </a>
+        <a class="btn-flat col-xs-6" href="#">
+            <i><img src="/static/img/ico_4.png" /></i>
+            liên hệ ngay
+        </a>
+    </div>
+</body>
+
+{{end}}

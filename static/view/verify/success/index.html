@@ -1,0 +1,29 @@
+{{define "css"}}
+	<link href="/static/css/styles.css" rel="stylesheet" />
+{{end}}
+
+{{define "body"}}
+
+<body>
+    <a data-ajax="false" href="javascript:history.back()" class="back-history-page"><i class="fa fa-reply" aria-hidden="true"></i></a>
+    <div class="full-image">
+        <img src="/static/img/img_1.png" />
+    </div>
+    <div class="container text-center">
+        <h1 class="title-big">{{.product_name}}</h1>
+        <p>Giá tham khảo: <span class="price">{{.price}}</span></p>
+    </div>
+    <div class="container">
+        <div class="verify">
+            <img src="/static/img/success.png" />
+        </div>
+        <div class="message-text">
+            <h2>Chúc mừng bạn</h2>
+            <p>đã có sự lựa chọn mua hàng sáng suốt</p>            
+            <a href="/api/handle/product_info?qrcode_id={{.qrcode_id}}&bulk_id={{.bulk_id}}" class="underline-link">Tra xuất thông tin sản phẩm</a>
+        </div>
+        <a title="chia sẻ" class="pull-right link-text"><i class="fa fa-share-alt" aria-hidden="true"></i>Chia sẻ</a>
+    </div>
+</body>
+
+{{end}}

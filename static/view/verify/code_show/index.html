@@ -1,0 +1,43 @@
+{{define "css"}}
+	<link href="/static/css/styles.css" rel="stylesheet" />
+{{end}}
+
+{{define "body"}}
+
+<body>
+	<form method="POST">
+		<a data-ajax="false" href="javascript:history.back()" class="back-history-page"><i class="fa fa-reply" aria-hidden="true"></i></a>
+		
+		<div class="full-image verify-using-code">
+			<div class="fillcode">
+				<p class="code-number">{{.verify_code}}</p>
+			</div>
+		</div>
+		<div class="container">
+				<button type="submit" class="btn-flat col-xs-12 verify-using-code text-center">Xác nhận</button>
+				<div class="verify">
+					<img src="/static/img/fail.png" />
+				</div>
+				<div class="message-text">
+					<h2>Chúc mừng bạn</h2>
+					<p>đã có sự lựa chọn mua hàng sáng suốt</p>
+					<a href="javascript:void(0)" class="underline-link">Tra xuất thông tin sản phẩm</a>
+				</div>        
+		</div>
+		<h2 class="title-break">Thông tin xác thực lần đầu tiên:</h2>
+		<ul class="product-information">
+			<li>Số điện thoại</li>
+			<li>Thời gian xác thực: {{.verify_time}}</li>
+			<li>Khu vực xác thực: {{.verify_location}}</li>
+		</ul>
+		<h2 class="title-break">Lịch sử xác thực:</h2>
+		<ul class="product-information">
+			<li>Số lần xác thực: {{.verify_count}}</li>
+			<li>Số lần quét: {{.scan_count}}</li>
+		</ul>
+		<div>
+			<a class="btn-material waves-effect waves-gray col-xs-12" href="javascript:void(0)">Tố cáo sản phẩm</a>
+		</div>	
+	</form>
+</body>
+{{end}}

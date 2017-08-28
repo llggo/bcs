@@ -1,0 +1,48 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="/static/plugin/bootstrap-3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="/static/plugin/font-awesome/css/font-awesome.min.css"> 
+     <link rel="stylesheet" href="/static/css/materialize.min.css"/>
+    
+    {{template "css"}}
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">QR Code View - Miraway</a>
+            </div>
+        </div>
+
+    </nav> -->
+
+    <div class="container-fruil">
+        {{template "body" .}}
+    </div>
+
+
+</body>
+
+<script src="/static/plugin/jquery/jquery-1.10.2.min.js"></script>
+<script src="/static/plugin/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="/static/js/materialize.min.js"></script>
+<script src="/static/js/app.js"></script>
+
+{{template "scripts"}}
+
+</html>
+
+{{end}} {{define "scripts"}} {{end}}
