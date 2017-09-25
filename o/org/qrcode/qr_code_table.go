@@ -2,13 +2,13 @@ package qrcode
 
 import (
 	"errors"
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 	"reflect"
 
 	"gopkg.in/mgo.v2/bson"
 )
 
-var TableQrcode = model.NewTable("qrcode", "qrcode")
+var TableQrcode = model.NewTable("qrcode", "")
 
 func NewQrID() string {
 	return TableQrcode.Next()
@@ -16,17 +16,18 @@ func NewQrID() string {
 
 func (qr *QrCode) Create() error {
 	qr.Enable = true
+
 	qr.SetID(qr.MakeID())
 
-	if qr.IsDynamic() {
-		qr.CreateImage(qr.MakeDynamicLink()) //dynamic
-	} else {
-		var sl, err = qr.MakeStaticLink()
-		if err != nil {
-			return err
-		}
-		qr.CreateImage(sl) //static
-	}
+	// if qr.IsDynamic() {
+	// 	qr.CreateImage(qr.MakeDynamicLink()) //dynamic
+	// } else {
+	// 	var sl, err = qr.MakeStaticLink()
+	// 	if err != nil {
+	// 		return err
+	// 	}
+	// 	qr.CreateImage(sl) //static
+	// }
 
 	return qr.Insert()
 }
@@ -70,7 +71,7 @@ func (qr *QrCode) Update(newValue *QrCode) error {
 	if newValue.GetTagetScan() != qr.GetTagetScan() {
 		values["taget_scan"] = newValue.GetTagetScan()
 	}
-
+	values["verify_limit"] = newValue.VerifyLimit
 	values["enable"] = newValue.Enable
 
 	return TableQrcode.UnsafeUpdateByID(qr.ID, values)

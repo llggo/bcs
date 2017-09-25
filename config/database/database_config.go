@@ -1,7 +1,7 @@
 package database
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/config/shared"
+	"bar-code/bcs/config/shared"
 )
 
 var logger = shared.ConfigLog

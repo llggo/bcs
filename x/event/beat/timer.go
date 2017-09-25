@@ -1,7 +1,7 @@
 package beat
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/event"
+	"bar-code/bcs/x/event"
 )
 
 var daily = event.NewHub(8)

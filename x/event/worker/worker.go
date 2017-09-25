@@ -1,7 +1,7 @@
 package worker
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/mlog"
 	"time"
 )
 

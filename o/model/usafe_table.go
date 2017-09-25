@@ -1,8 +1,8 @@
 package model
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
-	"qrcode-bulk/qrcode-bulk-generator/x/math"
+	"bar-code/bcs/x/db/mgo"
+	"bar-code/bcs/x/math"
 )
 
 type TableID struct {

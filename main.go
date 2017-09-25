@@ -8,10 +8,10 @@ import (
 	"github.com/golang/glog"
 
 	// 1. Config
-	_ "qrcode-bulk/qrcode-bulk-generator/config"
+	_ "bar-code/bcs/config"
 
-	"qrcode-bulk/qrcode-bulk-generator/httpserver"
-	"qrcode-bulk/qrcode-bulk-generator/x/runtime"
+	"bar-code/bcs/httpserver"
+	"bar-code/bcs/x/runtime"
 )
 
 func main() {

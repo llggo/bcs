@@ -1,7 +1,7 @@
 package mgo
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/x/web"
 
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"

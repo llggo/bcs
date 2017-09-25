@@ -2,8 +2,8 @@ package user
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/user"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/o/org/user"
+	"bar-code/bcs/x/web"
 )
 
 type UserServer struct {

@@ -10,20 +10,28 @@ type Work struct {
 	done      sync.WaitGroup
 	Work      func(index int64)
 	Done      func()
+	Async     bool
 	sync.Mutex
 }
 
 func (sw *Work) Run() {
-	sw.done.Add(sw.Count())
-	for i := 0; i < sw.Count(); i++ {
-		var start = sw.TaskLimit * int64(i)
-		var stop = sw.TaskLimit*int64(i) + sw.TaskLimit
-		if stop > sw.Number {
-			stop = sw.Number
+
+	if sw.Async {
+		sw.done.Add(sw.Count())
+
+		for i := 0; i < sw.Count(); i++ {
+			var start = sw.TaskLimit * int64(i)
+			var stop = sw.TaskLimit*int64(i) + sw.TaskLimit
+			if stop > sw.Number {
+				stop = sw.Number
+			}
+			go sw.Loop(start, stop)
 		}
-		go sw.Loop(start, stop)
+
+		sw.done.Wait()
+	} else {
+		sw.Loop(0, sw.Number)
 	}
-	sw.done.Wait()
 	sw.Done()
 }
 

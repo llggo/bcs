@@ -1,8 +1,8 @@
 package qrcode
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/db/mgo"
+	"bar-code/bcs/x/mlog"
 	qr "qrcode/qrcodelib"
 )
 
@@ -27,6 +27,7 @@ type QrCode struct {
 	QrLevel       qr.RecoveryLevel `bson:"level" json:"level"`
 	TagetScan     string           `bson:"taget_scan" json:"taget_scan"`
 	Host          string           ``
+	VerifyLimit   int              `bson:"verify_limit" json:"verify_limit"`
 }
 
 func (qr *QrCode) MakeStaticLink() (string, error) {
@@ -112,4 +113,8 @@ func (qr *QrCode) GetTagetScan() string {
 
 func (qr *QrCode) GetBulkID() string {
 	return qr.BulkID
+}
+
+func (qr *QrCode) GetVerifyLimit() int {
+	return qr.VerifyLimit
 }

@@ -2,7 +2,7 @@ package bulk
 
 import (
 	"errors"
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -46,16 +46,24 @@ func (b *Bulk) Update(newValue *Bulk) error {
 		values["hello"] = newValue.GetHello()
 	}
 
+	if newValue.GetVerifyLimit() != b.GetVerifyLimit() {
+		values["verify_limit"] = newValue.GetVerifyLimit()
+	}
+
 	if newValue.GetContact() != b.GetContact() {
 		values["contact"] = newValue.GetContact()
 	}
 
-	if newValue.GetProduct() != b.GetProduct() {
-		values["product"] = newValue.GetProduct()
-	}
-	if newValue.GetStatus() != b.GetStatus() {
-		values["status"] = newValue.GetStatus()
-	}
+	// if !reflect.DeepEqual(newValue.GetInfoProduct(), b.GetInfoProduct()) {
+	values["info_product"] = newValue.GetInfoProduct()
+	values["refer_product"] = newValue.GetRefer()
+	values["image"] = newValue.Image
+	values["logo"] = newValue.Logo
+	// values["type"] = newValue.Type
+	// }
+
+	values["status"] = newValue.GetStatus()
+
 	return TableBulk.UnsafeUpdateByID(b.ID, values)
 }
 

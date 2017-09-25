@@ -2,8 +2,8 @@ package auth
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/api/auth/session"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/user"
+	"bar-code/bcs/api/auth/session"
+	"bar-code/bcs/o/org/user"
 )
 
 func (s *AuthServer) handleMySettings(w http.ResponseWriter, r *http.Request) {

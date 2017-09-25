@@ -2,10 +2,10 @@ package config
 
 import (
 	"fmt"
-	"qrcode-bulk/qrcode-bulk-generator/config/business"
-	"qrcode-bulk/qrcode-bulk-generator/config/database"
-	"qrcode-bulk/qrcode-bulk-generator/config/shared"
-	"qrcode-bulk/qrcode-bulk-generator/config/station"
+	"bar-code/bcs/config/business"
+	"bar-code/bcs/config/database"
+	"bar-code/bcs/config/shared"
+	"bar-code/bcs/config/station"
 )
 
 var logger = shared.ConfigLog

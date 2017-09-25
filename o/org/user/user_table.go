@@ -1,7 +1,7 @@
 package user
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -77,10 +77,20 @@ func (v *User) Update(newValue *User) error {
 	if newValue.GetEmail() != v.GetEmail() {
 		values["email"] = newValue.GetEmail()
 	}
+	if newValue.GetAddress() != v.GetAddress() {
+		values["address"] = newValue.GetAddress()
+	}
+	if newValue.GetHello() != v.GetHello() {
+		values["hello"] = newValue.GetHello()
+	}
+	if newValue.GetLogo() != v.GetLogo() {
+		values["logo"] = newValue.GetLogo()
+	}
 
 	values["supcription_id"] = newValue.SupcriptionID
-
-	values["role"] = newValue.Role
+	if newValue.Role != "" {
+		values["role"] = newValue.Role
+	}
 
 	return TableUser.UnsafeUpdateByID(v.ID, values)
 }

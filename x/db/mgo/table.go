@@ -1,8 +1,8 @@
 package mgo
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/math"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/x/math"
+	"bar-code/bcs/x/web"
 	"time"
 
 	"gopkg.in/mgo.v2/bson"

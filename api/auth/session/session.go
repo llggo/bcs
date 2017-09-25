@@ -2,7 +2,7 @@ package session
 
 import (
 	"encoding/json"
-	"qrcode-bulk/qrcode-bulk-generator/x/math"
+	"bar-code/bcs/x/math"
 )
 
 var idMaker = math.RandStringMaker{Length: 40, Prefix: "s"}

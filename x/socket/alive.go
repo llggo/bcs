@@ -1,7 +1,7 @@
 package socket
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/timer"
+	"bar-code/bcs/x/timer"
 	"time"
 )
 

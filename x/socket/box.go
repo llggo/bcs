@@ -1,7 +1,7 @@
 package socket
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/mlog"
 )
 
 // Box handles ws request

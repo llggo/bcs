@@ -1,7 +1,7 @@
 package model
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
+	"bar-code/bcs/x/db/mgo"
 )
 
 type WithTag struct {

@@ -2,9 +2,10 @@ package httpserver
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/api"
-	"qrcode-bulk/qrcode-bulk-generator/config"
-	"qrcode-bulk/qrcode-bulk-generator/x/upload"
+	"bar-code/bcs/api"
+	"bar-code/bcs/config"
+	"bar-code/bcs/view"
+	"bar-code/bcs/x/upload"
 )
 
 func serverHandler() http.Handler {
@@ -25,6 +26,7 @@ func serverHandler() http.Handler {
 
 	// application specific
 	server.Handle("/api/", http.StripPrefix("/api", api.NewApiServer()))
+	server.Handle("/", http.StripPrefix("/v", view.NewViewServer()))
 
 	return server
 }

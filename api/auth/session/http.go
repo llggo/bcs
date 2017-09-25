@@ -2,8 +2,8 @@ package session
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/o/auth/session"
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/o/auth/session"
+	"bar-code/bcs/x/mlog"
 )
 
 var accessToken = "token"

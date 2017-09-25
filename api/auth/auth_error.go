@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/x/web"
 )
 
 const (

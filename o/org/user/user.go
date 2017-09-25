@@ -1,8 +1,8 @@
 package user
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/db/mgo"
+	"bar-code/bcs/x/mlog"
 	// "qrcode/pba/x/web"
 )
 
@@ -21,6 +21,9 @@ type User struct {
 	Company       string `bson:"company" json:"company"`
 	Phone         string `bson:"phone" json:"phone"`
 	SupcriptionID string `bson:"supcription_id" json:"supcription_id"`
+	Address       string `bson:"address" json:"address"`
+	Hello         string `bson:"hello" json:"hello"`
+	Logo          string `bson:"logo" json:"logo"`
 }
 
 func (v *User) ensureUniqueUsername() error {
@@ -55,4 +58,16 @@ func (v *User) GetCompany() string {
 
 func (v *User) GetEmail() string {
 	return v.Email
+}
+
+func (v *User) GetAddress() string {
+	return v.Address
+}
+
+func (v *User) GetHello() string {
+	return v.Hello
+}
+
+func (v *User) GetLogo() string {
+	return v.Logo
 }

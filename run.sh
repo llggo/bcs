@@ -1,4 +1,4 @@
 #!/bin/sh
-rm bqrc.exe
-go build -o bqrc.exe
-bqrc -conf=bqrc.toml
+rm qrcode-pba.exe
+go build -o qrcode-pba.exe
+qrcode -conf=qrcode-pba.toml

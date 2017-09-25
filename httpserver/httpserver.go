@@ -1,7 +1,7 @@
 package httpserver
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/mlog"
 )
 
 var logger = mlog.NewTagLog("httpserver")

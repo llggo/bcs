@@ -1,0 +1,79 @@
+﻿@font-face {
+    font-family: 'helveticaneue';
+    src: url('../fonts/helveticaneue.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'helveticaneuebold';
+    src: url('../fonts/helveticaneuebold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'helveticaneueitalic';
+    src: url('../fonts/helveticaneueitalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'helveticaneuelight';
+    src: url('../fonts/helveticaneuelight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'helveticaneuemedium';
+    src: url('../fonts/helveticaneuemedium.ttf') format('truetype');
+}
+
+.btn-flat {
+    font-size: 18px;
+    color: #00aeef;
+    border: 1px solid #dadbdc;
+    padding: 10px 25px;
+    height: auto;
+    line-height: initial;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+.group-flat-btn {
+    margin-top: 20px;
+
+    .btn-flat {
+        &:first-child {
+            border-right: 0;
+        }
+
+        font-size: 16px;
+
+        img {
+            width: 30px;
+        }
+    }
+}
+
+.link-text {
+    font-size: 16px;
+    color: #00aeef;
+
+    i {
+        margin-right: 10px;
+    }
+}
+
+.product-information {
+    padding: 0;
+
+    li {
+        border-bottom: 1px solid #dadbdc;
+        padding: 15px;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+.btn-material {
+    font-size: 16px;
+}
+
+$primary-color:#4eb2cf;

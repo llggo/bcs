@@ -2,9 +2,9 @@ package session
 
 import (
 	"encoding/json"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/feature"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/user"
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
+	"bar-code/bcs/o/org/feature"
+	"bar-code/bcs/o/org/user"
+	"bar-code/bcs/x/db/mgo"
 )
 
 type Session struct {

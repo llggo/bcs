@@ -2,8 +2,8 @@ package custom_api
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/customize"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/o/org/customize"
+	"bar-code/bcs/x/web"
 )
 
 type CustomServer struct {

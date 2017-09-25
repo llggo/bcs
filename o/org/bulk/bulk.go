@@ -1,41 +1,49 @@
 package bulk
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/db/mgo"
+	"bar-code/bcs/x/mlog"
 )
 
 var objBulkLogging = mlog.NewTagLog("obj_Bulk")
 
-type Info struct {
-	Topic   string `bson:"topic" json:"topic"`
-	Content string `bson:"content" json:"content"`
-}
-type iBulkInfo map[string]interface {
-	// Data : Info
-}
+// type infoProduct map[string]interface{}
 
 type Bulk struct {
 	mgo.BaseModel `bson:",inline"`
-	Name          string                 `bson:"name" json:"name"`
-	Status        bool                   `bson:"status" json:"status"`
-	Type          int                    `bson:"type" json:"type"`
-	VerifyNumber  int64                  `bson:"verify_number" json:"verify_number"`
-	QrCodeNumber  int64                  `bson:"qrcode_number" json:"qrcode_number"`
-	UserID        string                 `bson:"user_id" json:"user_id"`
-	Hello         string                 `bson:"hello" json:"hello"`
-	Contact       Contact                `bson:"contact" json:"contact"`
-	Product       Product                `bson:"product" json:"product"`
-	ReferProduct  map[string]interface{} `bson:"refer_product" json:"refer_product"`
+	Name          string                  `bson:"name" json:"name"`
+	Image         string                  `bson:"image" json:"image"`
+	Logo          string                  `bson:"logo" json:"logo"`
+	Status        bool                    `bson:"status" json:"status"`
+	Type          int                     `bson:"type" json:"type"`
+	VerifyNumber  int64                   `bson:"verify_number" json:"verify_number"`
+	QrCodeNumber  int64                   `bson:"qrcode_number" json:"qrcode_number"`
+	UserID        string                  `bson:"user_id" json:"user_id"`
+	Hello         string                  `bson:"hello" json:"hello"`
+	Contact       Contact                 `bson:"contact" json:"contact"`
+	ReferProduct  map[string]ReferProduct `bson:"refer_product" json:"refer_product"`
+	VerifyLimit   int                     `bson:"verify_limit" json:"verify_limit"`
+	InfoProduct   Product                 `bson:"info_product" json:"info_product"`
+}
+
+type ReferProduct struct {
+	Name  string `bson:"name" json:"name"`
+	Image string `bson:"image" json:"image"`
+	Price string `bson:"price" json:"price"`
+	Link  string `bson:"link" json:"link"`
 }
 
 type Product struct {
-	Name     string `bson:"name" json:"name"`
-	Image    string `bson:"image" json:"image"`
-	Price    string `bson:"price" json:"price"`
-	Tutorial string `bson:"tutorial" json:"tutorial"`
-	Result   string `bson:"result" json:"result"`
-	Element  string `bson:"element" json:"element"`
+	Name        string          `bson:"name" json:"name"`
+	ImageInfo   string          `bson:"image_info" json:"image_info"`
+	ImageVerify string          `bson:"image_verify" json:"image_verify"`
+	Price       string          `bson:"price" json:"price"`
+	Info        map[string]Info `bson:"info" json:"info"`
+}
+
+type Info struct {
+	Title   string `bson:"title" json:"title"`
+	Content string `bson:"content" json:"content"`
 }
 
 type Contact struct {
@@ -70,6 +78,10 @@ func (b *Bulk) GetHello() string {
 	return b.Hello
 }
 
+func (b *Bulk) GetVerifyLimit() int {
+	return b.VerifyLimit
+}
+
 func (b *Bulk) GetContact() *Contact {
 	var c = &Contact{
 		b.Contact.Logo,
@@ -81,18 +93,22 @@ func (b *Bulk) GetContact() *Contact {
 	return c
 }
 
-func (b *Bulk) GetProduct() *Product {
-	var c = &Product{
-		b.Product.Name,
-		b.Product.Image,
-		b.Product.Price,
-		b.Product.Tutorial,
-		b.Product.Result,
-		b.Product.Element,
-	}
-	return c
+// func (b *Bulk) GetProduct() *Product {
+// 	var c = &Product{
+// 		b.Product.Name,
+// 		b.Product.Image,
+// 		b.Product.Price,
+// 		b.Product.Tutorial,
+// 		b.Product.Result,
+// 		b.Product.Element,
+// 	}
+// 	return c
+// }
+
+func (b *Bulk) GetRefer() map[string]ReferProduct {
+	return b.ReferProduct
 }
 
-func (b *Bulk) GetRefer() map[string]interface{} {
-	return b.ReferProduct
+func (b *Bulk) GetInfoProduct() Product {
+	return b.InfoProduct
 }

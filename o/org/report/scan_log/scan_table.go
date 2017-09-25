@@ -1,7 +1,7 @@
 package scan_log
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 	"time"
 
 	"gopkg.in/mgo.v2/bson"
@@ -49,4 +49,9 @@ func init() {
 	if err := ScanTable.EnsureIndex("ctime"); err != nil {
 		objreportLoging.Error("report index error", err)
 	}
+}
+
+func GetByFirstTime(where interface{}) (*Scan, error) {
+	var v Scan
+	return &v, ScanTable.UnsafeRunGetOneBySort(where, "mtime desc", &v)
 }

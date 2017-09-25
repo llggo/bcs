@@ -40,7 +40,8 @@ func GetLocation(ip string) *LocationInfo {
 	res, err := http.Get(url)
 
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err)
+		return nil
 	}
 
 	body, err := ioutil.ReadAll(res.Body)
@@ -83,4 +84,9 @@ func GetDeviceInfo(r *http.Request) *DeviceInfo {
 	d.IsMobile = ua.Mobile()
 
 	return &d
+}
+
+func Find(where map[string]interface{}) (*Scan, error) {
+	var b Scan
+	return &b, ScanTable.ReadOne(where, &b)
 }

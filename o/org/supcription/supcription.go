@@ -1,8 +1,8 @@
 package supcription
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/org/feature"
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
+	"bar-code/bcs/o/org/feature"
+	"bar-code/bcs/x/db/mgo"
 	"time"
 )
 

@@ -2,9 +2,9 @@ package bulk
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/api/auth/session"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/bulk"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/api/auth/session"
+	"bar-code/bcs/o/org/bulk"
+	"bar-code/bcs/x/web"
 )
 
 type BulkServer struct {
@@ -23,6 +23,7 @@ func NewBulkServer() *BulkServer {
 	s.HandleFunc("/search", s.HandleAllBulk)
 	s.HandleFunc("/export_excel", s.HandleExportExcel)
 	s.HandleFunc("/change_status", s.HandleChangeStatus)
+	s.HandleFunc("/updateVerify", s.HandleUpdateVerify)
 	return s
 }
 
@@ -110,9 +111,17 @@ func (s *BulkServer) HandleAllBulk(w http.ResponseWriter, r *http.Request) {
 
 func (s *BulkServer) HandleChangeStatus(w http.ResponseWriter, r *http.Request) {
 	var b = s.mustGetBulk(r)
-	if b.Status {
-		b.Status = !b.Status
-	}
+	b.Status = !b.Status
 	web.AssertNil(b.Update(b))
+	s.SendData(w, nil)
+}
+
+func (s *BulkServer) HandleUpdateVerify(w http.ResponseWriter, r *http.Request) {
+	var id = r.URL.Query().Get("id")
+	err := bulk.UpdateVerify(id)
+	if err != nil {
+		s.SendError(w, err)
+		return
+	}
 	s.SendData(w, nil)
 }

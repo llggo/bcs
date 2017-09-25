@@ -1,9 +1,9 @@
 package config
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/config/business"
-	"qrcode-bulk/qrcode-bulk-generator/config/database"
-	"qrcode-bulk/qrcode-bulk-generator/config/station"
+	"bar-code/bcs/config/business"
+	"bar-code/bcs/config/database"
+	"bar-code/bcs/config/station"
 )
 
 func Station() *station.StationConfig {

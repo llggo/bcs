@@ -2,8 +2,8 @@ package station
 
 import (
 	"fmt"
-	"qrcode-bulk/qrcode-bulk-generator/config/shared"
-	"qrcode-bulk/qrcode-bulk-generator/x/conf"
+	"bar-code/bcs/config/shared"
+	"bar-code/bcs/x/conf"
 )
 
 var logger = shared.ConfigLog

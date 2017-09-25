@@ -1,7 +1,7 @@
 package session
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 )
 
 var TableSession = model.NewTable("session", "ses")

@@ -1,7 +1,7 @@
 package socket
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/event/worker"
+	"bar-code/bcs/x/event/worker"
 
 	"golang.org/x/net/websocket"
 )

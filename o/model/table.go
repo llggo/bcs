@@ -2,9 +2,9 @@ package model
 
 import (
 	"os"
-	"qrcode-bulk/qrcode-bulk-generator/config/cons"
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
-	"qrcode-bulk/qrcode-bulk-generator/x/math"
+	"bar-code/bcs/config/cons"
+	"bar-code/bcs/x/db/mgo"
+	"bar-code/bcs/x/math"
 )
 
 type TableWithCode struct {

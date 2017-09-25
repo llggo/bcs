@@ -1,7 +1,7 @@
 package verify
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -36,7 +36,7 @@ func GetByID(id string) (*Verify, error) {
 
 func GetByFirstTime(where interface{}) (*Verify, error) {
 	var v Verify
-	return &v, VerifyTable.UnsafeRunGetOneBySort(where, "ctime desc", &v)
+	return &v, VerifyTable.UnsafeRunGetOneBySort(where, "mtime desc", &v)
 }
 
 func (b *Verify) Create() error {

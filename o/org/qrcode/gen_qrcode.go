@@ -4,9 +4,10 @@ import (
 	"bufio"
 	"encoding/base64"
 	"fmt"
+
 	"log"
 	"os"
-	"qrcode-bulk/qrcode-bulk-generator/x/math"
+	"bar-code/bcs/x/math"
 	qrcode "qrcode/qrcodelib"
 	"strconv"
 	"time"

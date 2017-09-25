@@ -1,8 +1,8 @@
 package verify
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
-	"qrcode-bulk/qrcode-bulk-generator/x/mlog"
+	"bar-code/bcs/x/db/mgo"
+	"bar-code/bcs/x/mlog"
 )
 
 var objreportLoging = mlog.NewTagLog("obj_Report")

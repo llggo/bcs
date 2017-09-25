@@ -2,7 +2,7 @@ package qrcode_api
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/qrcode"
+	"bar-code/bcs/o/org/qrcode"
 
 	"github.com/mitchellh/mapstructure"
 )

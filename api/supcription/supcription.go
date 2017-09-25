@@ -2,11 +2,11 @@ package supcription
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/api/auth/session"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/feature"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/supcription"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/user"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/api/auth/session"
+	"bar-code/bcs/o/org/feature"
+	"bar-code/bcs/o/org/supcription"
+	"bar-code/bcs/o/org/user"
+	"bar-code/bcs/x/web"
 )
 
 type SupcriptionServer struct {

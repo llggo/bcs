@@ -3,10 +3,11 @@ package qrcode_api
 import (
 	"fmt"
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/api/auth/session"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/feature"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/qrcode"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/api/auth/session"
+	"bar-code/bcs/o/org/feature"
+	"bar-code/bcs/o/org/qrcode"
+	"bar-code/bcs/o/org/user"
+	"bar-code/bcs/x/web"
 )
 
 type QrCodeServer struct {
@@ -156,17 +157,31 @@ func (s *QrCodeServer) HandleAllQrCode(w http.ResponseWriter, r *http.Request) {
 func (s *QrCodeServer) HandleCountQrCode(w http.ResponseWriter, r *http.Request) {
 
 	var u = session.MustAuthScope(r)
-
-	qrs, err := qrcode.Count(map[string]interface{}{
-		"user_id": u.UserID,
-		"dtime":   0,
-	})
+	var isAdmin, err = user.GetByID(u.UserID)
 
 	if err != nil {
 		s.SendError(w, err)
-	} else {
-		s.SendData(w, qrs)
 	}
+
+	if isAdmin.Role == "admin" {
+		qrs, err := qrcode.Count(map[string]interface{}{"dtime": 0})
+		if err != nil {
+			s.SendError(w, err)
+		} else {
+			s.SendData(w, qrs)
+		}
+	} else {
+		qrs, err := qrcode.Count(map[string]interface{}{
+			"user_id": u.UserID,
+			"dtime":   0,
+		})
+		if err != nil {
+			s.SendError(w, err)
+		} else {
+			s.SendData(w, qrs)
+		}
+	}
+
 }
 
 //APi edit noi dung :  static:  gen lai, dynamic: k can

@@ -1,8 +1,8 @@
 package user
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/org/feature"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/supcription"
+	"bar-code/bcs/o/org/feature"
+	"bar-code/bcs/o/org/supcription"
 )
 
 func (u *User) CheckAccess(name feature.FeatureName, action feature.FeatureAction) (bool, *feature.Message) {

@@ -1,7 +1,7 @@
 package customize
 
 import (
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 
 	"gopkg.in/mgo.v2/bson"
 )

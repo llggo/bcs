@@ -3,8 +3,8 @@ package database
 import (
 	"fmt"
 	"os"
-	"qrcode-bulk/qrcode-bulk-generator/config/cons"
-	"qrcode-bulk/qrcode-bulk-generator/x/db/mgo"
+	"bar-code/bcs/config/cons"
+	"bar-code/bcs/x/db/mgo"
 )
 
 type DatabaseConfig struct {

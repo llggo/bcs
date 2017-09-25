@@ -3,7 +3,7 @@ package httpserver
 import (
 	"net/http"
 	"os"
-	"qrcode-bulk/qrcode-bulk-generator/config"
+	"bar-code/bcs/config"
 
 	"github.com/golang/glog"
 )

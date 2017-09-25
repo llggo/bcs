@@ -2,11 +2,11 @@ package verify_code
 
 import (
 	"net/http"
-	"qrcode-bulk/qrcode-bulk-generator/api/auth/session"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/qrcode"
-	"qrcode-bulk/qrcode-bulk-generator/o/org/verify_code"
-	"qrcode-bulk/qrcode-bulk-generator/x/math"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/api/auth/session"
+	"bar-code/bcs/o/org/qrcode"
+	"bar-code/bcs/o/org/verify_code"
+	"bar-code/bcs/x/math"
+	"bar-code/bcs/x/web"
 )
 
 type VerifyCodeServer struct {

@@ -2,7 +2,7 @@ package user
 
 import (
 	"os"
-	"qrcode-bulk/qrcode-bulk-generator/x/web"
+	"bar-code/bcs/x/web"
 
 	"golang.org/x/crypto/bcrypt"
 )

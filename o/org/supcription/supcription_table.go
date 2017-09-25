@@ -2,7 +2,7 @@ package supcription
 
 import (
 	"errors"
-	"qrcode-bulk/qrcode-bulk-generator/o/model"
+	"bar-code/bcs/o/model"
 
 	"gopkg.in/mgo.v2/bson"
 )
