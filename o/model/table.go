@@ -1,10 +1,10 @@
 package model
 
 import (
-	"os"
 	"bar-code/bcs/config/cons"
 	"bar-code/bcs/x/db/mgo"
 	"bar-code/bcs/x/math"
+	"os"
 )
 
 type TableWithCode struct {
