@@ -14,7 +14,8 @@ import (
 	"bar-code/bcs/x/runtime"
 )
 
-stop := make(chan os.Signal)
+func main() {
+	stop := make(chan os.Signal)
 	signal.Notify(stop, os.Interrupt)
 	runtime.MaxProc()
 	httpserver.Run(stop)

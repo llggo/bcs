@@ -4,13 +4,7 @@ import (
 	"net/http"
 
 	"bar-code/bcs/api/auth"
-	"bar-code/bcs/api/bulk"
-	"bar-code/bcs/api/custom_api"
-	"bar-code/bcs/api/qrcode_api"
-	"bar-code/bcs/api/supcription"
-	"bar-code/bcs/api/url_handle"
 	"bar-code/bcs/api/user"
-	"bar-code/bcs/api/verify_code"
 	"bar-code/bcs/x/web"
 )
 
@@ -26,12 +20,6 @@ func NewApiServer() *ApiServer {
 
 	s.Handle("/user/", http.StripPrefix("/user", user.NewUserServer()))
 	s.Handle("/auth/", http.StripPrefix("/auth", auth.NewAuthServer()))
-	s.Handle("/qrcode-api/", http.StripPrefix("/qrcode-api", qrcode_api.NewQrCodeServer()))
-	s.Handle("/handle/", http.StripPrefix("/handle", url_handle.NewURLHandleServer()))
-	s.Handle("/customize/", http.StripPrefix("/customize", custom_api.NewCustomServer()))
-	s.Handle("/supcription/", http.StripPrefix("/supcription", supcription.NewSupcriptionServer()))
-	s.Handle("/bulk/", http.StripPrefix("/bulk", bulk.NewBulkServer()))
-	s.Handle("/verify_code/", http.StripPrefix("/verify_code", verify_code.NewVerifyCodeServer()))
 	return s
 }
 
