@@ -25,11 +25,11 @@ func NewBarServer() *BarServer {
 }
 
 func (s *BarServer) HandleCreate(w http.ResponseWriter, r *http.Request) {
-	var u barcode.BarCode
-	s.MustDecodeBody(r, &u)
-	web.AssertNil(u.Create())
-	s.SendData(w, u)
-	//cu.OnUserCreated(u.ID)
+	var b barcode.BarCode
+	// s.MustDecodeBody(r, &b)
+	s.CreateImage(w, r)
+	web.AssertNil(b.Create())
+	s.SendData(w, b)
 }
 
 func (s *BarServer) mustGetCode(r *http.Request) *barcode.BarCode {

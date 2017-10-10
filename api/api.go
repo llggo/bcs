@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"bar-code/bcs/api/auth"
+	"bar-code/bcs/api/barcode"
 	"bar-code/bcs/api/user"
 	"bar-code/bcs/x/web"
 )
@@ -20,6 +21,7 @@ func NewApiServer() *ApiServer {
 
 	s.Handle("/user/", http.StripPrefix("/user", user.NewUserServer()))
 	s.Handle("/auth/", http.StripPrefix("/auth", auth.NewAuthServer()))
+	s.Handle("/barcode/", http.StripPrefix("/barcode", barcode.NewBarServer()))
 	return s
 }
 
